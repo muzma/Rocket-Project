@@ -25,15 +25,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let path = Bundle.main.path(forResource: "muzma-on", ofType: "wav")!
-//        let url = URL(fileURLWithPath: path)
-//        do {
-//            player = try AVAudioPlayer(contentsOf: url)
-//            player.prepareToPlay()
-//
-//        }catch let error as NSError{
-//            print(error.description)
-//        }
+        let path = Bundle.main.path(forResource: "sound", ofType: "wav")!
+        let url = URL(fileURLWithPath: path)
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player.prepareToPlay()
+
+        }catch let error as NSError{
+            print(error.description)
+        }
         
     }
     
@@ -42,10 +42,10 @@ class ViewController: UIViewController {
         darkBlueBG.isHidden = true
         powerBtn.isHidden = true
         
-     //   player.play()
+        player.play()
         
         UIView.animate(withDuration: 2.3, animations:{
-            self.rocket.frame = CGRect(x: 0, y:100, width: 143, height:402)
+            self.rocket.frame = CGRect(x: 0, y:50, width: 375, height:402)
         }) {(finished) in
             self.muzmaLbl.isHidden = false
             self.onLbl.isHighlighted =  false
